@@ -56,7 +56,7 @@
             {"_id": "lamb", "name":"Баранина", "cal": 2.01, "measure":"гр."},
             {"_id": "sauscook", "name":"Колбаса вареная", "cal": 3.96, "measure":"гр."},
             {"_id": "sausdry", "name":"Колбаса сырокопченая", "cal": 3.2, "measure":"гр."},
-            {"_id": "sausages", "name":"Сосиски", "cal": 3.96, "measure":"шт."},
+            {"_id": "sausages", "name":"Сосиски", "cal": 205, "measure":"шт."},
             {"_id": "chickfat", "name":"Курица жирная", "cal": 2.19, "measure":"гр."},
             {"_id": "chicklean", "name":"Курица нежирная", "cal": 1.04, "measure":"гр."},
             {"_id": "fishfat", "name":"Рыба жирная", "cal": 1.42, "measure":"гр."},

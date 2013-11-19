@@ -30,13 +30,15 @@ $(document).ready(function(){
             }
         },
         two:{
-            "span": "sum",
+            "span":"sum",//что блин не так?(
             "li":{
                 "product <- bowllist":{
                     "@style": "display: inline",
                     "@data-productid": "product._id",
                     "p:first-child": "product.name",
-                    "p:last-child":"product.measure",
+                    "p:nth-child(3)":"product.measure",
+                    "p:nth-child(4)":"'x'",
+                    "p:nth-child(4)@class":"'delete'",
                     "input@value": "product.number"
                 }
             }
@@ -46,18 +48,22 @@ $(document).ready(function(){
     var bowlRender = $(DOMvariables.bowlcolumn).compile(directivesForPure.two);
     //switch headers with store names
     function showList(){
-        $(".productlist").hide();
+        $(".productlist").hide();//hide product list if it has been shown
         $("#veg").find("header").css("border-radius", "0 0 10px 10px");//yes, it's awful and it doesn't work((
-        $(this).css("border-radius", "0 0 0 0")
+        $(this).css("border-radius", "0 0 0 0")//КЛАСС ПОВЕСЬ, ВАЛЕНОК, БЛЕАТЬ
             .next("ul").find(".productlist").show();
     }
     //calculate product calories by multiplied it with amount
-    //когда изменяешь кол-во продукта на 0, считает это неправильным кол-вом, ИСПРАВИТЬ!
-    function calCalc(_id, amount){
+    function calcSumOfBowl(e,_id, amount){
         sum = 0;
         for(var i = 0; i < bowlarray.length; i++){
             if(bowlarray[i]._id === _id){
-                bowlarray[i].number = amount;//new property for bowlarray
+                if(e === "delete"){
+                    bowlarray.splice(i, 1);
+                }
+                else if(e === "change"){
+                    bowlarray[i].number = amount;
+                }
             }
             sum += Math.ceil(bowlarray[i].number * bowlarray[i].cal);
         }
@@ -65,18 +71,22 @@ $(document).ready(function(){
     }
     //change product amount in bowl
     function changeAmount(){
-        debugger;
-        //var this_amount = checkString($(this).val());
-        var this_amount = parseInt(($(this).val()), 10);//something goes wrong
+        var this_amount = parseInt(($(this).val()), 10);
         var this_id = $(this).closest("li").attr("data-productid");
         if(isNaN(this_amount) || this_amount > 1000){
-            $(DOMvariables.alertheader).text("Введите верное количество продукта.")
+            $(DOMvariables.alertheader).text("Введите верное количество продукта.");
         }
         else{
             $(DOMvariables.alertheader).text(defaulttext);
-            calCalc(this_id, this_amount);
+            calcSumOfBowl("change", this_id, this_amount);
+            //$(DOMvariables.bowlcolumn).render({bowllist: bowlarray}, bowlRender); манда такая, не перерисовывает((
             $("#bowlcolumn").find("header").text("Итог: " + sum + " кал.");
         }
+    }
+    function deleteProduct(){
+        calcSumOfBowl("delete", $(this).closest("li").attr("data-productid"));
+        $(DOMvariables.bowlcolumn).render({bowllist: bowlarray}, bowlRender);
+        $("#bowlcolumn").find("header").text("Итог: " + sum + " кал.");
     }
     //call when click on product in list
     function addProduct(){
@@ -102,11 +112,17 @@ $(document).ready(function(){
             if(jsonArr[i]._id === itemstore){
                 for(var j = 0; j < jsonArr[i].items.length; j++){
                     if(jsonArr[i].items[j]._id === itemid){
-                        jsonArr[i].items[j].number = 0;
+                        jsonArr[i].items[j].number = 0;//new property for array
                         return jsonArr[i].items[j];
                     }
                 }
             }
+        }
+    }
+    function sortArray(){
+        jsonArr.sort();
+        for(var i = 0; i < jsonArr.length; i++){
+            jsonArr[i].items.sort();
         }
     }
     //get data from json
@@ -122,11 +138,11 @@ $(document).ready(function(){
              alert(textStatus + ": " + errorThrown);
          },
          complete: function(){
-             jsonArr.sort();
              $(DOMvariables.productcolumn).render({stores: jsonArr}, productsRender);
              $(DOMvariables.productcolumn).on("click", ".storeheader", showList);
              $(DOMvariables.productcolumn).on("click", ".productlist", addProduct);
              $(document).on("change", "input", changeAmount );
+             $(document).on("click", ".delete", deleteProduct);
          }
     });
 

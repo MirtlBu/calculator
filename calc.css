@@ -98,9 +98,16 @@ input{
     width: 75%;
     display: inline-block;
 }
-#bowlcolumn p:last-child{
+#bowlcolumn p:nth-child(3){
     width:5%;
     display: inline-block;
+}
+#bowlcolumn p:nth-child(4){
+    width: 4%;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
 }
 .productlist{
     display: none;
