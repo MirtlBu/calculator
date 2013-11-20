@@ -10,7 +10,12 @@ $(document).ready(function(){
     var jsonArr = [];
     var bowlarray = [];
     var sum = 0;
-    var DOMvariables = {productcolumn: "#productcolumn", bowlcolumn: "#bowlcolumn", alertheader: "main > header > p:last-child"};
+    var DOMvariables = {
+        productcolumn: "#productcolumn",
+        bowlcolumn: "#bowlcolumn",
+        alertheader: "main > header > span:last-child",
+        bottomheader: "#productcolumn > section:last-child > header"
+    };
     var defaulttext = $(DOMvariables.alertheader).text();
     var directivesForPure = {
         one:{
@@ -33,12 +38,14 @@ $(document).ready(function(){
             "span":"sum",//что блин не так?(
             "li":{
                 "product <- bowllist":{
-                    "@style": "display: inline",
+                    "@class":"'inbowl'",
                     "@data-productid": "product._id",
                     "p:first-child": "product.name",
                     "p:nth-child(3)":"product.measure",
-                    "p:nth-child(4)":"'x'",
-                    "p:nth-child(4)@class":"'delete'",
+                    "p:nth-child(4)": "'V'",
+                    "p:nth-child(4)@class": "'add'",
+                    "p:last-child":"'X'",
+                    "p:last-child@class":"'delete'",
                     "input@value": "product.number"
                 }
             }
@@ -48,10 +55,8 @@ $(document).ready(function(){
     var bowlRender = $(DOMvariables.bowlcolumn).compile(directivesForPure.two);
     //switch headers with store names
     function showList(){
-        $(".productlist").hide();//hide product list if it has been shown
-        $("#veg").find("header").css("border-radius", "0 0 10px 10px");//yes, it's awful and it doesn't work((
-        $(this).css("border-radius", "0 0 0 0")//КЛАСС ПОВЕСЬ, ВАЛЕНОК, БЛЕАТЬ
-            .next("ul").find(".productlist").show();
+        $(DOMvariables.productcolumn).find("header").removeClass("unrounded").next("ul").removeClass("expanded");
+        $(this).addClass("unrounded").next("ul").addClass("expanded");
     }
     //calculate product calories by multiplied it with amount
     function calcSumOfBowl(e,_id, amount){
@@ -71,13 +76,13 @@ $(document).ready(function(){
     }
     //change product amount in bowl
     function changeAmount(){
-        var this_amount = parseInt(($(this).val()), 10);
+        $(DOMvariables.alertheader).text(defaulttext);
+        var this_amount = parseInt(($(this).closest("li").find("input").val()), 10);//учить regexp((
         var this_id = $(this).closest("li").attr("data-productid");
         if(isNaN(this_amount) || this_amount > 1000){
             $(DOMvariables.alertheader).text("Введите верное количество продукта.");
         }
         else{
-            $(DOMvariables.alertheader).text(defaulttext);
             calcSumOfBowl("change", this_id, this_amount);
             //$(DOMvariables.bowlcolumn).render({bowllist: bowlarray}, bowlRender); манда такая, не перерисовывает((
             $("#bowlcolumn").find("header").text("Итог: " + sum + " кал.");
@@ -93,7 +98,7 @@ $(document).ready(function(){
         var returnedItem = chooseProduct(this);
         for(var i = 0; i < bowlarray.length; i++){
             if(bowlarray[i]._id === returnedItem._id){
-                $(DOMvariables.alertheader).text("Выбранный вами продукт уже есть в миске");
+                $(DOMvariables.alertheader).text("Выбранный вами продукт уже есть в миске.");
                 return;
             }
         }
@@ -112,17 +117,11 @@ $(document).ready(function(){
             if(jsonArr[i]._id === itemstore){
                 for(var j = 0; j < jsonArr[i].items.length; j++){
                     if(jsonArr[i].items[j]._id === itemid){
-                        jsonArr[i].items[j].number = 0;//new property for array
+                        jsonArr[i].items[j].number = 0;
                         return jsonArr[i].items[j];
                     }
                 }
             }
-        }
-    }
-    function sortArray(){
-        jsonArr.sort();
-        for(var i = 0; i < jsonArr.length; i++){
-            jsonArr[i].items.sort();
         }
     }
     //get data from json
@@ -139,9 +138,10 @@ $(document).ready(function(){
          },
          complete: function(){
              $(DOMvariables.productcolumn).render({stores: jsonArr}, productsRender);
-             $(DOMvariables.productcolumn).on("click", ".storeheader", showList);
+             $(DOMvariables.productcolumn).on("click", "header", showList);
              $(DOMvariables.productcolumn).on("click", ".productlist", addProduct);
-             $(document).on("change", "input", changeAmount );
+             $(document).on("change", "input", changeAmount );//почему-то не вешается на DOMvariables.bowlcolumn
+             $(document).on("click", ".add", changeAmount );
              $(document).on("click", ".delete", deleteProduct);
          }
     });

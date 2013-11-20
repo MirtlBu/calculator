@@ -16,104 +16,79 @@ main{
     margin: auto;
 }
 p{
-    margin: 0px;
+    margin: 0;
 }
 main > header{
     width: 100%;
+    height: 100px;
     margin: 0 auto;
     max-width: 930px;
-    height: 140px;
 }
-
-main > header > p:first-child{
+main > header > span:first-child{
     float: left;
-    width: 50%;
+    width: 53%;
+    height: 35%;
     font-size: 2.5em;
     background-color: black;
     color: white;
-    padding: 5% 0 0 3%;
-    height: 60px;
+    padding: 5% 0 3% 0;
     border-radius: 0 0 10px 10px;
+    text-align: center;
 }
-main > header > p:last-child{
+main > header > span:last-child{
     float: right;
     width: 45%;
+    height: 35%;
     padding: 6% 0 0 0;
     font-size: 0.8em;
+    text-align: center;
 }
 #wrap{
     width: 80%;
     margin: 0 auto;
+    margin-top: 3%;
+    min-height: 700px;
 }
-
 #wrap header{
     background-color: black;
     color: white;
-    font-size: 1.5em;
-    padding-left: 2%;
+    font-size: 1.3em;
+    padding:1% 0 1% 2%;
 }
 ul{
     margin: auto;
-    width: 98%;
+    width: 85%;
     background-color: white;
-    padding: 1% 0 2% 0;
+    padding-bottom: 3%;
 }
 li{
+    display: none;
     list-style: none;
-    font-size: 0.7em;
-    margin: 0 0 0 5%;
-    cursor: pointer;
 }
-
-input{
-    width: 5%;
-    margin-left: 1%;
-}
-
 #productcolumn{
     width: 35%;
     float: left;
     background-color: rgba(208,208,208, 0.9);
-    border-radius: 10px;
-}
-#productcolumn li{
-    width: 90%;
-}
-#productcolumn > section:first-child > header{
-    border-radius: 10px 10px 0 0;
-}
-#productcolumn > section:last-child > ul{
-    padding: 0 0 0 0;
     border-radius: 0 0 10px 10px;
 }
 
-#productcolumn > section:last-child > header{
-    border-radius: 0 0 10px 10px;
-}
-#bowlcolumn{
-    width: 60%;
-    float: right;
-}
-#bowlcolumn p:first-child{
-    width: 75%;
-    display: inline-block;
-}
-#bowlcolumn p:nth-child(3){
-    width:5%;
-    display: inline-block;
-}
-#bowlcolumn p:nth-child(4){
-    width: 4%;
-    display: inline-block;
-    font-size: 16px;
-    font-weight: bold;
-    text-align: center;
-}
 .productlist{
     display: none;
 }
-#bowlcolumn li {
-    display: none;
+#productcolumn > section:first-child > header{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+#productcolumn > section:last-child > header{
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+#productcolumn > section:last-child > header.unrounded{
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+#productcolumn > section:last-child > ul{
+    padding-bottom: 0;
 }
 .productlist:hover{
     color: darkorange;
@@ -121,4 +96,91 @@ input{
 .storeheader{
     cursor: pointer;
 }
-footer{}
+ul.expanded > li{
+    width: 90%;
+    display: list-item;
+    cursor: pointer;
+    font-size: 0.7em;
+    padding-bottom: 1%;
+}
+ul.expanded > li:first-child{
+    padding-top: 3%;
+}
+ul.expanded > li:last-child{
+    padding-bottom: 3%;
+}
+#productcolumn > section:last-child > ul.expanded{
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+#bowlcolumn{
+    width: 60%;
+    float: right;
+    background-color: rgba(208,208,208, 0.9);
+    border-radius: 0 0 10px 10px;
+}
+#bowlcolumn > header{
+    border-radius: 10px 10px 0 0;
+}
+#bowlcolumn ul{
+    width: 91%;
+    display: block;
+    border-radius: 0 0 10px 10px;
+}
+li.inbowl:first-child{
+    padding-top: 1%;
+}
+li.inbowl:last-child{
+    padding-bottom: 1%;
+}
+li.inbowl{
+    display: list-item;
+}
+li.inbowl > p{
+    display: inline-block;
+    width: 5%;
+    font-size: 0.8em;
+}
+li.inbowl > p:first-child{
+    width: 60%;
+    margin-right: 5%;
+}
+li.inbowl > p:nth-child(4), li.inbowl > p:last-child{
+    margin-left: 2%;
+    margin-right: 1%;
+    width: 5%;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+    color: white;
+    border-radius: 20px;
+    background-color: black;
+}
+li.inbowl > p:nth-child(4):hover, li.inbowl > p:last-child:hover{
+    box-shadow: 0 0 0px 1px #000;
+    -moz-box-shadow: 0 0 0px 1px #000;
+    -webkit-box-shadow: 0 0 0px 1px #000;
+}
+input{
+    width: 5%;
+    margin-left: 1%;
+}
+footer{
+    clear: both;
+    padding-top: 1%;
+    margin: auto;
+}
+footer > div{
+    width: 90%;
+    margin: auto;
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+}
+footer > div > div{
+    width: 45%;
+    display: inline-block;
+    padding: 1% 0 1% 0;
+    text-align: center;
+}
