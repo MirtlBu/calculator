@@ -42,9 +42,6 @@ $(document).ready(function(){
                     "@data-productid": "product._id",
                     "p:first-child": "product.name",
                     "p:nth-child(3)":"product.measure",
-                    "p:nth-child(4)": "'V'",
-                    "p:nth-child(4)@class": "'add'",
-                    "p:last-child":"'X'",
                     "p:last-child@class":"'delete'",
                     "input@value": "product.number"
                 }
@@ -55,41 +52,51 @@ $(document).ready(function(){
     var bowlRender = $(DOMvariables.bowlcolumn).compile(directivesForPure.two);
     //switch headers with store names
     function showList(){
-        $(DOMvariables.productcolumn).find("header").removeClass("unrounded").next("ul").removeClass("expanded");
-        $(this).addClass("unrounded").next("ul").addClass("expanded");
+        if($(this).next("ul").hasClass("expanded")){
+            $(this).removeClass("unrounded").next("ul").removeClass("expanded");
+        }
+        else{
+            $(this).addClass("unrounded").next("ul").addClass("expanded");
+        }
     }
     //calculate product calories by multiplied it with amount
-    function calcSumOfBowl(e,_id, amount){
+    function allBowlCalories(){
         sum = 0;
         for(var i = 0; i < bowlarray.length; i++){
-            if(bowlarray[i]._id === _id){
-                if(e === "delete"){
-                    bowlarray.splice(i, 1);
-                }
-                else if(e === "change"){
-                    bowlarray[i].number = amount;
-                }
-            }
-            sum += Math.ceil(bowlarray[i].number * bowlarray[i].cal);
+            sum += Math.ceil((bowlarray[i].number * bowlarray[i].cal));
         }
         return sum;
+    }
+    function identifyElement(_id){
+        for(var i = 0; i < bowlarray.length; i++){
+            if(bowlarray[i]._id === _id){
+               return i;
+            }
+        }
     }
     //change product amount in bowl
     function changeAmount(){
         $(DOMvariables.alertheader).text(defaulttext);
         var this_amount = parseInt(($(this).closest("li").find("input").val()), 10);//учить regexp((
         var this_id = $(this).closest("li").attr("data-productid");
-        if(isNaN(this_amount) || this_amount > 1000){
-            $(DOMvariables.alertheader).text("Введите верное количество продукта.");
+        if(isNaN(this_amount)){
+            $(DOMvariables.alertheader).text("Похоже, вы ввели значение, которое не является числом.");
+        }
+        else if(this_amount > 1000){
+            $(DOMvariables.alertheader).text("Калькулятор не предназначен для использования в промышленных масштабах. " +
+                "Попробуйте уменьшить количество продукта.");
         }
         else{
-            calcSumOfBowl("change", this_id, this_amount);
+            bowlarray[identifyElement(this_id)].number = this_amount;
+            allBowlCalories();
             //$(DOMvariables.bowlcolumn).render({bowllist: bowlarray}, bowlRender); манда такая, не перерисовывает((
             $("#bowlcolumn").find("header").text("Итог: " + sum + " кал.");
         }
     }
     function deleteProduct(){
-        calcSumOfBowl("delete", $(this).closest("li").attr("data-productid"));
+        var this_id = $(this).closest("li").attr("data-productid");
+        bowlarray.splice(identifyElement(this_id), 1);
+        allBowlCalories();
         $(DOMvariables.bowlcolumn).render({bowllist: bowlarray}, bowlRender);
         $("#bowlcolumn").find("header").text("Итог: " + sum + " кал.");
     }
@@ -140,8 +147,7 @@ $(document).ready(function(){
              $(DOMvariables.productcolumn).render({stores: jsonArr}, productsRender);
              $(DOMvariables.productcolumn).on("click", "header", showList);
              $(DOMvariables.productcolumn).on("click", ".productlist", addProduct);
-             $(document).on("change", "input", changeAmount );//почему-то не вешается на DOMvariables.bowlcolumn
-             $(document).on("click", ".add", changeAmount );
+             $(document).on("keyup", "input", changeAmount );//почему-то не вешается на DOMvariables.bowlcolumn
              $(document).on("click", ".delete", deleteProduct);
          }
     });
