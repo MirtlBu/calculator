@@ -18,68 +18,81 @@ body{
     background: transparent;
 }
 main{
-    width: 90%;
+    width: 1280px;
+    height: 1074px;
     margin: auto;
 }
 p{
     margin: 0;
 }
+li{
+    display: none;
+    list-style: none;
+}
 main > header{
-    width: 100%;
-    height: 100px;
+    width: 80%;/*1024/1280*100*/
+    height: 13.96648044692737%;/*150/1074*100*/
     margin: 0 auto;
-    max-width: 930px;
 }
 main > header > span:first-child{
     float: left;
-    width: 53%;
-    height: 35%;
-    font-size: 2.5em;
+    width: 63.4765625%;/*650/1024*100*/
+    height: 46.66666666666667%;/*70/150*100*/
+    padding-top: 7.8125%;/*80/1024*100*/
+    font-size: 2.875em;/*46/16*/
     background-color: black;
     color: white;
-    padding: 5% 0 3% 0;
     border-radius: 0 0 10px 10px;
     text-align: center;
 }
 main > header > span:last-child{
     float: right;
-    width: 45%;
-    height: 35%;
-    padding: 6% 0 0 0;
-    font-size: 0.8em;
+    width: 34.1796875%;/*350/1024*100*/
+    height: 46.66666666666667%;/*70/150*100*/
+    padding-top: 7.8125%;/*80/1024*100*/
+    font-size: 0.875em;/*14/16*/
     text-align: center;
 }
 #wrap{
-    width: 80%;
+    width: 80%;/*1024/1280*100*/
+    height: 65.17690875232775%;/*700/1074*100*/
     margin: 0 auto;
-    margin-top: 3%;
-    min-height: 700px;
+    margin-top: 2.865329512893983%;/*30/1074*100*/
 }
 #wrap header{
+    margin: 0 auto;
     background-color: black;
     color: white;
-    font-size: 1.3em;
-    padding:1% 0 1% 2%;
-}
-ul{
-    margin: auto;
-    width: 85%;
-    background-color: white;
-    padding-bottom: 3%;
-}
-li{
-    display: none;
-    list-style: none;
+    font-size: 1.75em;/*28/16*/
 }
 #productcolumn{
-    width: 35%;
+    width: 39.0625%;/*400/1024*100*/
     float: left;
+    border-radius: 10px;
     background-color: rgba(208,208,208, 0.9);
-    border-radius: 0 0 10px 10px;
 }
-
-.productlist{
-    display: none;
+#productcolumn ul{
+    margin: 0 auto;
+    width: 87.5%;/*350/400*100*/
+    background-color: white;    
+}
+#productcolumn > section > header > span{
+    width: 22px;
+    height: 20px;
+    display: inline-block;
+    background: url("icons.svg") -23px 0;
+    vertical-align: middle;
+    cursor: pointer;
+}
+#productcolumn > section > header{
+    padding: 1.25%;/*5/400*100*/
+}
+#productcolumn > section > header > p{
+    display: inline-block;
+    margin-left: 2.5%;/*10/400*100*/
+}
+#productcolumn > section > header > span.expanded{
+    background: url("icons.svg") -47px 0;
 }
 #productcolumn > section:first-child > header{
     border-top-left-radius: 10px;
@@ -93,98 +106,86 @@ li{
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
 }
+#productcolumn > section > ul{
+    padding-bottom: 3.75%;/*15/400*100*/
+}
 #productcolumn > section:last-child > ul{
     padding-bottom: 0;
 }
 .productlist:hover{
-    color: darkorange;
+    color: rgb(192,0,0);
 }
-.storeheader{
-    cursor: pointer;
+.alertalert{
+    color: rgb(192,0,0);
 }
 ul.expanded > li{
-    width: 90%;
     display: list-item;
     cursor: pointer;
-    font-size: 0.7em;
-    padding-bottom: 1%;
+    font-size: 1.125em;/*18/16*/
+    padding-bottom: 0.8571428571428571%;/*3/350*100*/
 }
 ul.expanded > li:first-child{
-    padding-top: 3%;
+    padding-top: 2.857142857142857%;/*10/350*100*/
 }
 ul.expanded > li:last-child{
-    padding-bottom: 3%;
+    padding-bottom: 2.857142857142857%;/*10/350*100*/
 }
 #productcolumn > section:last-child > ul.expanded{
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
 }
 #bowlcolumn{
-    width: 60%;
+    width: 58.59375%;/*600/1024*100*/
     float: right;
     background-color: rgba(208,208,208, 0.9);
-    border-radius: 0 0 10px 10px;
+    border-radius: 10px;
 }
 #bowlcolumn > header{
-    border-radius: 10px 10px 0 0;
+    padding: 0.8333333333333333%;/*5/600*100*/
+    padding-left: 3.333333333333333%;/*20/600*100*/
+    border-radius: 10px 10px 0 0;    
 }
 #bowlcolumn ul{
-    width: 91%;
+    width: 91.66666666666667%;/*550/600*100*/
     display: block;
+    padding-bottom: 3.636363636363636%;/*20/550*100*/
     border-radius: 0 0 10px 10px;
+    font-size: 1.25em;/*20/16*/
+    margin: 0 auto;    
+    background-color: white;
 }
 li.inbowl:first-child{
-    padding-top: 1%;
+    padding-top: 1.818181818181818%;/*10/550*100*/
 }
 li.inbowl:last-child{
-    padding-bottom: 1%;
+    padding-bottom: 1.818181818181818%;/*10/550*100*/
 }
 li.inbowl{
     display: list-item;
 }
 li.inbowl > p{
     display: inline-block;
-    width: 5%;
-    font-size: 0.8em;
+    width: 6.363636363636364%;/*35/550*100*/
 }
 li.inbowl > p:first-child{
-    width: 60%;
-    margin-right: 5%;
+    width: 69.09090909090909%;/*380/550*100*/
 }
-li.inbowl > p:last-child{
-    margin-left: 5%;
-    width: 20px;
+li.inbowl > div{
+    margin-left: 4.545454545454545%;/*25/550*100*/
+    width: 21px;
     height: 20px;
-    font-size: 1.1em;
-    font-weight: bold;
-    cursor: pointer;
-    text-align: center;
-    background: url("icons.svg") no-repeat fixed 10px -10px;
-}
-li.inbowl > p:last-child:hover{
-    box-shadow: 0 0 0px 1px #000;
-    -moz-box-shadow: 0 0 0px 1px #000;
-    -webkit-box-shadow: 0 0 0px 1px #000;
-}
-input{
-    width: 5%;
-    margin-left: 1%;
-}
-footer{
-    clear: both;
-    padding-top: 1%;
-    margin: auto;
-}
-footer > div{
-    width: 90%;
-    margin: auto;
-    background-color: black;
-    color: white;
-    border-radius: 10px;
-}
-footer > div > div{
-    width: 45%;
     display: inline-block;
-    padding: 1% 0 1% 0;
-    text-align: center;
+    cursor: pointer;    
+    background: url("icons.svg") 0 0;
+    vertical-align: middle;
+}
+
+input{
+    width: 5.454545454545455%;/*30/550*100*/
+}
+
+@media (max-width: 1280px){
+    main > header > span:first-child{
+        color: red;
+    }
 }

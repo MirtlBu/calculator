@@ -21,7 +21,8 @@ $(document).ready(function(){
         one:{
             "section": {
                 "store <- stores":{
-                    "header": "store.name",
+                    "header > span":"",
+                    "header > p": "store.name",
                     "header@class":"'storeheader'",
                     "@data-store":"store._id",
                     "li":{
@@ -42,7 +43,7 @@ $(document).ready(function(){
                     "@data-productid": "product._id",
                     "p:first-child": "product.name",
                     "p:nth-child(3)":"product.measure",
-                    "p:last-child@class":"'delete'",
+                    "div@class":"'delete'",
                     "input@value": "product.number"
                 }
             }
@@ -53,10 +54,10 @@ $(document).ready(function(){
     //switch headers with store names
     function showList(){
         if($(this).next("ul").hasClass("expanded")){
-            $(this).removeClass("unrounded").next("ul").removeClass("expanded");
+            $(this).removeClass("unrounded").find("span").removeClass("expanded").closest("header").next("ul").removeClass("expanded");
         }
         else{
-            $(this).addClass("unrounded").next("ul").addClass("expanded");
+            $(this).addClass("unrounded").find("span").addClass("expanded").closest("header").next("ul").addClass("expanded");
         }
     }
     //calculate product calories by multiplied it with amount
@@ -76,14 +77,14 @@ $(document).ready(function(){
     }
     //change product amount in bowl
     function changeAmount(){
-        $(DOMvariables.alertheader).text(defaulttext);
+        $(DOMvariables.alertheader).removeClass("alertalert").text(defaulttext);
         var this_amount = parseInt(($(this).closest("li").find("input").val()), 10);//учить regexp((
         var this_id = $(this).closest("li").attr("data-productid");
         if(isNaN(this_amount)){
-            $(DOMvariables.alertheader).text("Похоже, вы ввели значение, которое не является числом.");
+            $(DOMvariables.alertheader).addClass("alertalert").text("Похоже, вы ввели значение, которое не является числом.");
         }
         else if(this_amount > 1000){
-            $(DOMvariables.alertheader).text("Калькулятор не предназначен для использования в промышленных масштабах. " +
+            $(DOMvariables.alertheader).addClass("alertalert").text("Калькулятор не предназначен для использования в промышленных масштабах. " +
                 "Попробуйте уменьшить количество продукта.");
         }
         else{
@@ -105,11 +106,11 @@ $(document).ready(function(){
         var returnedItem = chooseProduct(this);
         for(var i = 0; i < bowlarray.length; i++){
             if(bowlarray[i]._id === returnedItem._id){
-                $(DOMvariables.alertheader).text("Выбранный вами продукт уже есть в миске.");
+                $(DOMvariables.alertheader).addClass("alertalert").text("Выбранный вами продукт уже есть в миске.");
                 return;
             }
         }
-        $(DOMvariables.alertheader).text(defaulttext);
+        $(DOMvariables.alertheader).removeClass("alertalert").text(defaulttext);
         bowlarray.push(returnedItem);
         $(DOMvariables.bowlcolumn).render({bowllist: bowlarray}, bowlRender);
         $("#bowlcolumn").find("header").text("Итог: " + sum + " кал.");
@@ -131,6 +132,9 @@ $(document).ready(function(){
             }
         }
     }
+    function size(){
+        alert($(document).width());
+    }
     //get data from json
     $.ajax({
          url: "newjson.json",
@@ -144,6 +148,7 @@ $(document).ready(function(){
              alert(textStatus + ": " + errorThrown);
          },
          complete: function(){
+            $("main").find("span:last-child").click(size);
              $(DOMvariables.productcolumn).render({stores: jsonArr}, productsRender);
              $(DOMvariables.productcolumn).on("click", "header", showList);
              $(DOMvariables.productcolumn).on("click", ".productlist", addProduct);
