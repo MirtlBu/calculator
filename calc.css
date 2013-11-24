@@ -31,12 +31,14 @@ li{
 }
 main > header{
     width: 80%;/*1024/1280*100*/
+    min-width: 1024px;
     height: 13.96648044692737%;/*150/1074*100*/
     margin: 0 auto;
 }
 main > header > span:first-child{
     float: left;
     width: 63.4765625%;/*650/1024*100*/
+    min-width: 650px;
     height: 46.66666666666667%;/*70/150*100*/
     padding-top: 7.8125%;/*80/1024*100*/
     font-size: 2.875em;/*46/16*/
@@ -55,6 +57,7 @@ main > header > span:last-child{
 }
 #wrap{
     width: 80%;/*1024/1280*100*/
+    min-width: 1024px;
     height: 65.17690875232775%;/*700/1074*100*/
     margin: 0 auto;
     margin-top: 2.865329512893983%;/*30/1074*100*/
@@ -67,15 +70,17 @@ main > header > span:last-child{
 }
 #productcolumn{
     width: 39.0625%;/*400/1024*100*/
+    min-width: 400px;
     float: left;
     border-radius: 10px;
     background-color: rgba(208,208,208, 0.9);
 }
-#productcolumn ul{
+/*#productcolumn ul{
     margin: 0 auto;
-    width: 87.5%;/*350/400*100*/
+    width: 87.5%;
     background-color: white;    
-}
+}*/
+
 #productcolumn > section > header > span{
     width: 22px;
     height: 20px;
@@ -107,6 +112,9 @@ main > header > span:last-child{
     border-bottom-right-radius: 0;
 }
 #productcolumn > section > ul{
+    margin: 0 auto;
+    width: 87.5%;/*350/400*100*/
+    background-color: white;
     padding-bottom: 3.75%;/*15/400*100*/
 }
 #productcolumn > section:last-child > ul{
@@ -136,6 +144,7 @@ ul.expanded > li:last-child{
 }
 #bowlcolumn{
     width: 58.59375%;/*600/1024*100*/
+    min-width: 600px;
     float: right;
     background-color: rgba(208,208,208, 0.9);
     border-radius: 10px;
@@ -179,13 +188,84 @@ li.inbowl > div{
     background: url("icons.svg") 0 0;
     vertical-align: middle;
 }
-
 input{
     width: 5.454545454545455%;/*30/550*100*/
 }
 
-@media (max-width: 1280px){
+
+@media (max-width: 1050px){      
+    main{
+        width: 768px;
+    }
+    main > header{
+        min-width: 768px;
+        height: 150px;
+    }
     main > header > span:first-child{
-        color: red;
+        float: none;
+        display: block;
+        min-width: 768px;        
+        height: 70px;
+        padding-top: 30px;
+    }
+    main > header > span:last-child{
+        float: none;
+        display: block;
+        min-width: 768px;
+        padding-top: 10px;        
+        height: 40px;
+        font-size: 12px;
+    }
+    #wrap{
+    min-width: 768px;
+    font-size: 10px;
+    height: 600px;
+    margin-top: 10px;
+    }
+    #productcolumn{
+        float: none;
+        display: block;
+        min-width: 768px;
+    }
+    #productcolumn > section > header{
+        padding: 3px;
+        padding-left: 10px;
+    }
+    #productcolumn > section > ul{
+        padding-bottom: 10px;
+        width: 715px;
+    }
+    #bowlcolumn{
+        float: none;
+        display: block;
+        min-width: 768px;
+        margin-top: 10px;
+    }
+    #bowlcolumn > header{
+        padding: 3px;
+        padding-left: 10px;
+    }
+    #bowlcolumn ul{
+        padding-bottom: 10px;
+        width: 715px;
+        font-size: 10px;
+    }
+    ul.expanded > li{
+        padding-bottom: 1px;
+    }
+    ul.expanded > li:first-child{
+        padding-top: 2px;
+    }
+    ul.expanded > li:last-child{
+        padding-bottom: 2px;
+    }
+    li.inbowl:first-child{
+        padding-top: 2px;
+    }
+    li.inbowl:last-child{
+        padding-bottom: 2px;
+    }
+    input{
+        height: 15px;
     }
 }
