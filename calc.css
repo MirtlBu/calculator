@@ -18,9 +18,10 @@ body{
     background: transparent;
 }
 main{
-    width: 1280px;
-    height: 1074px;
-    margin: auto;
+    width: 1000px;
+    height: 905px;
+    margin: 0 auto;
+    background: url("wow1.svg") no-repeat 350px 270px;
 }
 p{
     margin: 0;
@@ -30,17 +31,15 @@ li{
     list-style: none;
 }
 main > header{
-    width: 80%;/*1024/1280*100*/
-    min-width: 1024px;
-    height: 13.96648044692737%;/*150/1074*100*/
+    width: 100%;/*1024/1280*/
+    height: 13.96648044692737%;/*150/1074*/
     margin: 0 auto;
 }
 main > header > span:first-child{
     float: left;
-    width: 63.4765625%;/*650/1024*100*/
-    min-width: 650px;
-    height: 46.66666666666667%;/*70/150*100*/
-    padding-top: 7.8125%;/*80/1024*100*/
+    width: 63.4765625%;/*650/1024*/
+    height: 53.33333333333333%;/*80/150*/
+    padding-top: 6.8359375%;/*70/1024*/
     font-size: 2.875em;/*46/16*/
     background-color: black;
     color: white;
@@ -49,18 +48,17 @@ main > header > span:first-child{
 }
 main > header > span:last-child{
     float: right;
-    width: 34.1796875%;/*350/1024*100*/
-    height: 46.66666666666667%;/*70/150*100*/
-    padding-top: 7.8125%;/*80/1024*100*/
+    width: 34.1796875%;/*350/1024*/
+    height: 46.66666666666667%;/*70/150*/
+    padding-top: 7.8125%;/*80/1024*/
     font-size: 0.875em;/*14/16*/
     text-align: center;
 }
 #wrap{
-    width: 80%;/*1024/1280*100*/
-    min-width: 1024px;
-    height: 65.17690875232775%;/*700/1074*100*/
+    width: 100%;/*1024/1280*100*/
+    height: 65.17690875232775%;/*700/1074*/
     margin: 0 auto;
-    margin-top: 2.865329512893983%;/*30/1074*100*/
+    margin-top: 2.865329512893983%;/*30/1074*/
 }
 #wrap header{
     margin: 0 auto;
@@ -69,18 +67,11 @@ main > header > span:last-child{
     font-size: 1.75em;/*28/16*/
 }
 #productcolumn{
-    width: 39.0625%;/*400/1024*100*/
-    min-width: 400px;
+    width: 39.0625%;/*400/1024*/
     float: left;
     border-radius: 10px;
     background-color: rgba(208,208,208, 0.9);
 }
-/*#productcolumn ul{
-    margin: 0 auto;
-    width: 87.5%;
-    background-color: white;    
-}*/
-
 #productcolumn > section > header > span{
     width: 22px;
     height: 20px;
@@ -90,11 +81,11 @@ main > header > span:last-child{
     cursor: pointer;
 }
 #productcolumn > section > header{
-    padding: 1.25%;/*5/400*100*/
+    padding: 1.25%;/*5/400*/
 }
 #productcolumn > section > header > p{
     display: inline-block;
-    margin-left: 2.5%;/*10/400*100*/
+    margin-left: 2.5%;/*10/400*/
 }
 #productcolumn > section > header > span.expanded{
     background: url("icons.svg") -47px 0;
@@ -113,9 +104,9 @@ main > header > span:last-child{
 }
 #productcolumn > section > ul{
     margin: 0 auto;
-    width: 87.5%;/*350/400*100*/
+    width: 87.5%;/*350/400*/
     background-color: white;
-    padding-bottom: 3.75%;/*15/400*100*/
+    padding-bottom: 3.75%;/*15/400*/
 }
 #productcolumn > section:last-child > ul{
     padding-bottom: 0;
@@ -130,13 +121,13 @@ ul.expanded > li{
     display: list-item;
     cursor: pointer;
     font-size: 1.125em;/*18/16*/
-    padding-bottom: 0.8571428571428571%;/*3/350*100*/
+    padding-bottom: 0.8571428571428571%;/*3/350*/
 }
 ul.expanded > li:first-child{
-    padding-top: 2.857142857142857%;/*10/350*100*/
+    padding-top: 2.857142857142857%;/*10/350*/
 }
 ul.expanded > li:last-child{
-    padding-bottom: 2.857142857142857%;/*10/350*100*/
+    padding-bottom: 2.857142857142857%;/*10/350*/
 }
 #productcolumn > section:last-child > ul.expanded{
     border-bottom-left-radius: 10px;
@@ -144,43 +135,42 @@ ul.expanded > li:last-child{
 }
 #bowlcolumn{
     width: 58.59375%;/*600/1024*100*/
-    min-width: 600px;
     float: right;
     background-color: rgba(208,208,208, 0.9);
     border-radius: 10px;
 }
 #bowlcolumn > header{
-    padding: 0.8333333333333333%;/*5/600*100*/
-    padding-left: 3.333333333333333%;/*20/600*100*/
+    padding: 0.8333333333333333%;/*5/600*/
+    padding-left: 3.333333333333333%;/*20/600*/
     border-radius: 10px 10px 0 0;    
 }
 #bowlcolumn ul{
-    width: 91.66666666666667%;/*550/600*100*/
+    width: 91.66666666666667%;/*550/600*/
     display: block;
-    padding-bottom: 3.636363636363636%;/*20/550*100*/
+    padding-bottom: 3.636363636363636%;/*20/550*/
     border-radius: 0 0 10px 10px;
     font-size: 1.25em;/*20/16*/
     margin: 0 auto;    
     background-color: white;
 }
 li.inbowl:first-child{
-    padding-top: 1.818181818181818%;/*10/550*100*/
+    padding-top: 1.818181818181818%;/*10/550*/
 }
 li.inbowl:last-child{
-    padding-bottom: 1.818181818181818%;/*10/550*100*/
+    padding-bottom: 1.818181818181818%;/*10/550*/
 }
 li.inbowl{
     display: list-item;
 }
 li.inbowl > p{
     display: inline-block;
-    width: 6.363636363636364%;/*35/550*100*/
+    width: 6.363636363636364%;/*35/550*/
 }
 li.inbowl > p:first-child{
-    width: 69.09090909090909%;/*380/550*100*/
+    width: 69.09090909090909%;/*380/550*/
 }
 li.inbowl > div{
-    margin-left: 4.545454545454545%;/*25/550*100*/
+    margin-left: 4.545454545454545%;/*25/550*/
     width: 21px;
     height: 20px;
     display: inline-block;
@@ -189,83 +179,78 @@ li.inbowl > div{
     vertical-align: middle;
 }
 input{
-    width: 5.454545454545455%;/*30/550*100*/
+    width: 5.454545454545455%;/*30/550*/
 }
 
-
-@media (max-width: 1050px){      
+@media (max-width: 1010px){
     main{
         width: 768px;
+        background: url("wow1.svg") no-repeat 320px 460px;
+        background-size: 500px 432px;
     }
     main > header{
-        min-width: 768px;
+        width: 100%;
         height: 150px;
     }
     main > header > span:first-child{
         float: none;
         display: block;
-        min-width: 768px;        
-        height: 70px;
-        padding-top: 30px;
+        width: 100%;
+        height: 46.66666666666667%;/*70/150*/
+        padding-top: 3.90625%;/*30/768*/
     }
     main > header > span:last-child{
         float: none;
         display: block;
-        min-width: 768px;
-        padding-top: 10px;        
-        height: 40px;
+        width: 100%;
+        padding-top: 1.302083333333333%;/*10/768*/
+        height: 26.66666666666667%;/*40/150*/
         font-size: 12px;
     }
     #wrap{
-    min-width: 768px;
-    font-size: 10px;
-    height: 600px;
-    margin-top: 10px;
+        width: 100%;
+        font-size: 10px;
+        margin-top: 1.302083333333333%;/*10/768*/
     }
     #productcolumn{
         float: none;
         display: block;
-        min-width: 768px;
+        width: 100%;
     }
     #productcolumn > section > header{
-        padding: 3px;
-        padding-left: 10px;
+        padding: 0.390625%;/*3/768*/
+        padding-left: 1.302083333333333%;/*10/768*/
     }
     #productcolumn > section > ul{
-        padding-bottom: 10px;
-        width: 715px;
+        padding-bottom: 1.302083333333333%;/*10/768*/
+        width: 93.09895833333333%;/*715/768*/
     }
     #bowlcolumn{
         float: none;
         display: block;
-        min-width: 768px;
-        margin-top: 10px;
+        width: 100%;
+        margin-top: 1.302083333333333%;/*10/768*/
     }
     #bowlcolumn > header{
-        padding: 3px;
-        padding-left: 10px;
+        padding: 0.390625%;/*3/768*/
+        padding-left: 1.302083333333333%;/*10/768*/
     }
     #bowlcolumn ul{
-        padding-bottom: 10px;
-        width: 715px;
+        padding-bottom: 1.302083333333333%;/*10/768*/
+        width: 93.09895833333333%;/*715/768*/
         font-size: 10px;
     }
     ul.expanded > li{
-        padding-bottom: 1px;
+        padding-bottom: 0.1302083333333333%;/*1/768*/
     }
-    ul.expanded > li:first-child{
-        padding-top: 2px;
+    ul.expanded > li:first-child, li.inbowl:first-child{
+        padding-top: 0.2604166666666667%;/*2/768*/
     }
-    ul.expanded > li:last-child{
-        padding-bottom: 2px;
-    }
-    li.inbowl:first-child{
-        padding-top: 2px;
-    }
-    li.inbowl:last-child{
-        padding-bottom: 2px;
+    ul.expanded > li:last-child, li.inbowl:last-child{
+        padding-bottom: 0.2604166666666667%;/*2/768*/
     }
     input{
-        height: 15px;
+        height: 1.953125%;/*15/768*/
     }
 }
+
