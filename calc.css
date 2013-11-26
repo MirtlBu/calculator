@@ -18,10 +18,14 @@ body{
     background: transparent;
 }
 main{
-    width: 1000px;
+    width: 992px;
     height: 905px;
     margin: 0 auto;
     background: url("wow1.svg") no-repeat 350px 270px;
+}
+a{
+    text-decoration: none;
+    color: white;
 }
 p{
     margin: 0;
@@ -187,6 +191,7 @@ input{
         width: 768px;
         background: url("wow1.svg") no-repeat 320px 460px;
         background-size: 500px 432px;
+        font-size: 14px;
     }
     main > header{
         width: 100%;
@@ -252,5 +257,22 @@ input{
     input{
         height: 1.953125%;/*15/768*/
     }
+}
+@media (max-width: 772px){
+    main{
+        width: 480px;
+        background: url("wow1.svg") no-repeat 60px 200px;
+        background-size: 500px 432px;
+        font-size: 10px;
+    }
+    main > header{
+        height: 100px;
+    }
+    #productcolumn > section > header{
+        height: 20px;
+        padding-top: 0;
+        padding-bottom: 5px;
+    }
+
 }
 

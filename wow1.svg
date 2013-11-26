@@ -48,7 +48,7 @@
      fit-margin-left="0"
      fit-margin-right="0"
      fit-margin-bottom="0"
-     inkscape:zoom="0.67660551"
+     inkscape:zoom="0.47843234"
      inkscape:cx="318.17722"
      inkscape:cy="282.20223"
      inkscape:window-x="-8"
@@ -62,7 +62,8 @@
      style="display:inline"
      transform="translate(-459.76636,-987.43084)" />
   <g
-     id="g4183">
+     id="g4183"
+     transform="matrix(0.76923077,0,0,0.76923077,0,144.40498)">
     <g
        transform="matrix(0.89793718,0,0,0.89793718,-0.13959554,144.13612)"
        id="g4083">
