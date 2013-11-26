@@ -140,7 +140,7 @@ $(document).ready(function(){
         }
     }
     function size(){
-        alert($(document).height());
+        alert($(document).width());
     }
     //get data from json
     $.ajax({
