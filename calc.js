@@ -91,7 +91,7 @@ $(document).ready(function(){
             bowlarray[identifyElement(this_id)].number = this_amount;
             allBowlCalories();
             //$(DOMvariables.bowlcolumn).render({bowllist: bowlarray}, bowlRender); манда такая, не перерисовывает((
-            $("#bowlcolumn").find("header").text("Итог: " + sum + " кал.");
+            $(DOMvariables.bowlcolumn).find("header").text("Итог: " + sum + " кал.");
         }
     }
     function deleteProduct(){
@@ -99,7 +99,13 @@ $(document).ready(function(){
         bowlarray.splice(identifyElement(this_id), 1);
         allBowlCalories();
         $(DOMvariables.bowlcolumn).render({bowllist: bowlarray}, bowlRender);
-        $("#bowlcolumn").find("header").text("Итог: " + sum + " кал.");
+        if(bowlarray.length === 0){
+            $(DOMvariables.bowlcolumn).find("ul").removeClass("filled");
+        }
+        else{
+            $(DOMvariables.bowlcolumn).find("ul").addClass("filled");
+        }
+        $(DOMvariables.bowlcolumn).find("header").text("Итог: " + sum + " кал.");
     }
     //call when click on product in list
     function addProduct(){
@@ -113,7 +119,8 @@ $(document).ready(function(){
         $(DOMvariables.alertheader).removeClass("alertalert").text(defaulttext);
         bowlarray.push(returnedItem);
         $(DOMvariables.bowlcolumn).render({bowllist: bowlarray}, bowlRender);
-        $("#bowlcolumn").find("header").text("Итог: " + sum + " кал.");
+        $(DOMvariables.bowlcolumn).find("ul").addClass("filled");
+        $(DOMvariables.bowlcolumn).find("header").text("Итог: " + sum + " кал.");
     }
     //get store and id of chosen element from data attribute and call search function
     function chooseProduct(el){
@@ -133,7 +140,7 @@ $(document).ready(function(){
         }
     }
     function size(){
-        alert($(document).width());
+        alert($(document).height());
     }
     //get data from json
     $.ajax({

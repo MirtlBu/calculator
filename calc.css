@@ -21,7 +21,8 @@ main{
     width: 992px;
     height: 905px;
     margin: 0 auto;
-    background: url("wow1.svg") no-repeat 350px 270px;
+    background: url("wow1.svg") no-repeat 340px 40px;
+    background-size: 950px 872px;
 }
 a{
     text-decoration: none;
@@ -35,9 +36,7 @@ li{
     list-style: none;
 }
 main > header{
-    width: 100%;/*1024/1280*/
     height: 13.96648044692737%;/*150/1074*/
-    margin: 0 auto;
 }
 main > header > span:first-child{
     float: left;
@@ -53,19 +52,14 @@ main > header > span:first-child{
 main > header > span:last-child{
     float: right;
     width: 34.1796875%;/*350/1024*/
-    height: 46.66666666666667%;/*70/150*/
     padding-top: 7.8125%;/*80/1024*/
     font-size: 0.875em;/*14/16*/
     text-align: center;
 }
 #wrap{
-    width: 100%;/*1024/1280*100*/
-    height: 65.17690875232775%;/*700/1074*/
-    margin: 0 auto;
     margin-top: 2.865329512893983%;/*30/1074*/
 }
 #wrap header{
-    margin: 0 auto;
     background-color: black;
     color: white;
     font-size: 1.75em;/*28/16*/
@@ -77,10 +71,11 @@ main > header > span:last-child{
     background-color: rgba(208,208,208, 0.9);
 }
 #productcolumn > section > header > span{
-    width: 22px;
-    height: 20px;
+    width: 32px;
+    height: 30px;
+    background: url("icons.svg") 108px 85px;
+    background-size: 140px 140px;
     display: inline-block;
-    background: url("icons.svg") -23px 0;
     vertical-align: middle;
     cursor: pointer;
 }
@@ -92,7 +87,8 @@ main > header > span:last-child{
     margin-left: 2.5%;/*10/400*/
 }
 #productcolumn > section > header > span.expanded{
-    background: url("icons.svg") -47px 0;
+    background: url("icons.svg") 75px 85px;
+    background-size: 140px 140px;
 }
 #productcolumn > section:first-child > header{
     border-top-left-radius: 10px;
@@ -111,6 +107,7 @@ main > header > span:last-child{
     width: 87.5%;/*350/400*/
     background-color: white;
     padding-bottom: 3.75%;/*15/400*/
+    font-size: 1em;
 }
 #productcolumn > section:last-child > ul{
     padding-bottom: 0;
@@ -124,7 +121,6 @@ main > header > span:last-child{
 ul.expanded > li{
     display: list-item;
     cursor: pointer;
-    font-size: 1.125em;/*18/16*/
     padding-bottom: 0.8571428571428571%;/*3/350*/
 }
 ul.expanded > li:first-child{
@@ -144,16 +140,14 @@ ul.expanded > li:last-child{
     border-radius: 10px;
 }
 #bowlcolumn > header{
-    padding: 0.8333333333333333%;/*5/600*/
     padding-left: 3.333333333333333%;/*20/600*/
     border-radius: 10px 10px 0 0;    
 }
 #bowlcolumn ul{
     width: 91.66666666666667%;/*550/600*/
-    display: block;
     padding-bottom: 3.636363636363636%;/*20/550*/
     border-radius: 0 0 10px 10px;
-    font-size: 1.25em;/*20/16*/
+    font-size: 1em;
     margin: 0 auto;    
     background-color: white;
 }
@@ -175,51 +169,48 @@ li.inbowl > p:first-child{
 }
 li.inbowl > div{
     margin-left: 4.545454545454545%;/*25/550*/
-    width: 21px;
-    height: 20px;
+    width: 32px;
+    height: 30px;
+    background: url("icons.svg") 141px 85px;
+    background-size: 140px 140px;
     display: inline-block;
-    cursor: pointer;    
-    background: url("icons.svg") 0 0;
+    cursor: pointer;
     vertical-align: middle;
+}
+#bowlcolumn ul.filled{
+    padding-bottom: 0;
 }
 input{
     width: 5.454545454545455%;/*30/550*/
 }
-
 @media (max-width: 1010px){
     main{
         width: 768px;
-        background: url("wow1.svg") no-repeat 320px 460px;
-        background-size: 500px 432px;
-        font-size: 14px;
+        background: url("wow1.svg") no-repeat 240px 230px;
+        background-size: 750px 672px;
     }
     main > header{
-        width: 100%;
         height: 150px;
     }
     main > header > span:first-child{
         float: none;
         display: block;
         width: 100%;
-        height: 46.66666666666667%;/*70/150*/
-        padding-top: 3.90625%;/*30/768*/
+        height: 43.33333333333333%;/*65/150*/
+        padding-top: 4.557291666666667%;/*35/768*/
     }
     main > header > span:last-child{
         float: none;
         display: block;
-        width: 100%;
+        width: 90%;
+        margin: 0 auto;
         padding-top: 1.302083333333333%;/*10/768*/
-        height: 26.66666666666667%;/*40/150*/
-        font-size: 12px;
     }
     #wrap{
-        width: 100%;
-        font-size: 10px;
         margin-top: 1.302083333333333%;/*10/768*/
     }
     #productcolumn{
         float: none;
-        display: block;
         width: 100%;
     }
     #productcolumn > section > header{
@@ -229,21 +220,17 @@ input{
     #productcolumn > section > ul{
         padding-bottom: 1.302083333333333%;/*10/768*/
         width: 93.09895833333333%;/*715/768*/
+        font-size: 14px;
     }
     #bowlcolumn{
         float: none;
-        display: block;
         width: 100%;
         margin-top: 1.302083333333333%;/*10/768*/
-    }
-    #bowlcolumn > header{
-        padding: 0.390625%;/*3/768*/
-        padding-left: 1.302083333333333%;/*10/768*/
     }
     #bowlcolumn ul{
         padding-bottom: 1.302083333333333%;/*10/768*/
         width: 93.09895833333333%;/*715/768*/
-        font-size: 10px;
+        font-size: 14px;
     }
     ul.expanded > li{
         padding-bottom: 0.1302083333333333%;/*1/768*/
@@ -261,18 +248,43 @@ input{
 @media (max-width: 772px){
     main{
         width: 480px;
-        background: url("wow1.svg") no-repeat 60px 200px;
-        background-size: 500px 432px;
-        font-size: 10px;
+        background: url("wow1.svg") no-repeat 0 195px;
+        background-size: 700px 612px;
     }
     main > header{
-        height: 100px;
+        height: 120px;
+    }
+    main > header > span:first-child{
+        padding-top: 5px;
+        font-size: 36px;
+        height: 60px;
+    }
+    main > header > span:last-child{
+        height: 60px;
+        font-size: 14px;
+        padding-top: 0;
+        margin: 0 auto;
     }
     #productcolumn > section > header{
-        height: 20px;
+        height: 35px;
         padding-top: 0;
-        padding-bottom: 5px;
+        padding-bottom: 10px;
     }
-
+    #productcolumn > section > header > p{
+        font-size: 28px;
+        vertical-align: middle;
+    }
+    #productcolumn > section > ul{
+        width: 90%;
+        font-size: 14px;
+    }
+    #bowlcolumn > header{
+        height: 35px;
+        padding-top: 0;
+    }
+    #bowlcolumn ul{
+        width: 90%;
+        font-size: 14px;
+    }
 }
 
