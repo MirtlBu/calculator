@@ -13,7 +13,7 @@ $(document).ready(function(){
     var DOMvariables = {
         productcolumn: "#productcolumn",
         bowlcolumn: "#bowlcolumn",
-        alertheader: "main > header > span:last-child",
+        alertheader: "#main > header > span:last-child",
         bottomheader: "#productcolumn > section:last-child > header"
     };
     var defaulttext = $(DOMvariables.alertheader).text();
@@ -155,7 +155,7 @@ $(document).ready(function(){
              alert(textStatus + ": " + errorThrown);
          },
          complete: function(){
-            $("main").find("span:last-child").click(size);
+            $("#main").find("span:last-child").click(size);
              $(DOMvariables.productcolumn).render({stores: jsonArr}, productsRender);
              $(DOMvariables.productcolumn).on("click", "header", showList);
              $(DOMvariables.productcolumn).on("click", ".productlist", addProduct);
