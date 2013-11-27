@@ -201,7 +201,7 @@ input{
         font-size: 0.875em;/*14/16*/
     }
 }
-@media screen and (max-width: 768px){
+@media screen and (max-width: 990px){
     #main{
         width: 450px;
         background: url("wow1.svg") no-repeat 0px 210px;
