@@ -21,8 +21,8 @@ main{
     width: 1000px;
     height: 905px;
     margin: 0 auto;
-    background: url("wow1.svg") no-repeat 340px 40px;
-    background-size: 950px 872px;
+    background: url("wow1.svg") no-repeat 340px 70px;
+    background-size: 950px 821px;
 }
 a{
     text-decoration: none;
@@ -36,7 +36,7 @@ li{
     list-style: none;
 }
 ul{
-    background-color: rgba(255,255,255, 0.5);
+    background-color: rgba(255,255,255, 0.9);
 }
 main > header{
     height: 13.96648044692737%;/*150/1074*/
@@ -71,7 +71,6 @@ main > header > span:last-child{
     width: 39.0625%;/*400/1024*/
     float: left;
     border-radius: 10px;
-    background-color: rgba(208,208,208, 0.7);
 }
 #productcolumn > section > header > span{
     width: 32px;
@@ -107,7 +106,6 @@ main > header > span:last-child{
 }
 #productcolumn > section > ul{
     margin: 0 auto;
-    width: 87.5%;/*350/400*/
     padding-bottom: 3.75%;/*15/400*/
     font-size: 1em;
 }
@@ -138,7 +136,6 @@ ul.expanded > li:last-child{
 #bowlcolumn{
     width: 58.59375%;/*600/1024*100*/
     float: right;
-    background-color: rgba(208,208,208, 0.7);
     border-radius: 10px;
 }
 #bowlcolumn > header{
@@ -146,7 +143,6 @@ ul.expanded > li:last-child{
     border-radius: 10px 10px 0 0;    
 }
 #bowlcolumn ul{
-    width: 91.66666666666667%;/*550/600*/
     padding-bottom: 3.636363636363636%;/*20/550*/
     border-radius: 0 0 10px 10px;
     font-size: 1em;
@@ -187,37 +183,29 @@ input{
 @media screen and (max-width: 1024px){
     main{
         width: 740px;
-        background: url("wow1.svg") no-repeat 120px 100px;
-        background-size: 900px 800px;
+        background: url("wow1.svg") no-repeat 120px 110px;
+        background-size: 900px 778px;
     }
     main > header > span:first-child{
-        font-size: 38px;
+        font-size: 2.375em;/*38/16*/
         height: 60px;
         padding-top: 60px;
     }
     main > header > span:last-child{
-        font-size: 12px;
+        font-size: 0.75em;/*12/16*/
     }
-    #productcolumn > section > header{
-        font-size: 22px;
+    #productcolumn > section > header, #bowlcolumn > header{
+        font-size: 1.375em;/*22/16*/
     }
-    #productcolumn > section > ul{
-        width: 240px;
-        font-size: 14px;
-    }
-    #bowlcolumn > header{
-        font-size: 22px;
-    }
-    #bowlcolumn ul{
-        width: 385px;
-        font-size: 14px;
+    #productcolumn > section > ul, #bowlcolumn ul{
+        font-size: 0.875em;/*14/16*/
     }
 }
 @media screen and (max-width: 768px){
     main{
         width: 450px;
         background: url("wow1.svg") no-repeat 0px 210px;
-        background-size: 650px 575px;
+        background-size: 650px 561px;
     }
     main > header{
         height: 150px;
@@ -247,20 +235,14 @@ input{
         padding: 0.390625%;/*3/768*/
         padding-left: 1.302083333333333%;/*10/768*/
     }
-    #productcolumn > section > ul{
+    #productcolumn > section > ul, #bowlcolumn ul{
         padding-bottom: 1.302083333333333%;/*10/768*/
-        width: 88.88888888888889%;/*400/450*/
         font-size: 14px;
     }
     #bowlcolumn{
         float: none;
         width: 100%;
         margin-top: 1.302083333333333%;/*10/768*/
-    }
-    #bowlcolumn ul{
-        padding-bottom: 1.302083333333333%;/*10/768*/
-        width: 88.88888888888889%;/*400/450*/
-        font-size: 14px;
     }
     ul.expanded > li{
         padding-bottom: 0.1302083333333333%;/*1/768*/
@@ -279,44 +261,94 @@ input{
     main{
         width: 320px;
         background: url("wow1.svg") no-repeat 10px 250px;
-        background-size: 450px 382px;
+        background-size: 450px 389px;
     }
     main > header{
         height: 120px;
     }
     main > header > span:first-child{
-        padding-top: 25px;
-        font-size: 28px;
-        height: 40px;
+        padding-top: 7.8125%;/*25/320*/
+        font-size: 1.75em;/*28/16*/
+        height: 33.33333333333333%;/*40/120*/
     }
     main > header > span:last-child{
-        height: 60px;
-        font-size: 12px;
-        padding-top: 5px;
+        height: 50%;/*60/120*/
+        font-size: 0.75em;/*12/16*/
+        padding-top: 1.5625%;/*5/320*/
         margin: 0 auto;
     }
     #productcolumn > section > header{
-        height: 35px;
         padding-top: 0;
-        padding-bottom: 10px;
+        padding-bottom: 1.5625%;/*5/320*/
     }
     #productcolumn > section > header > p{
-        font-size: 26px;
-        margin-left: 0;
+        font-size: 1.181818181818182em;/*26/22*/
+        margin-left: 1.5625%;/*5/320*/
         padding-top: 3px;
     }
-    #productcolumn > section > ul{
-        width: 270px;
+    #productcolumn > section > ul, #bowlcolumn ul{
         font-size: 12px;
     }
+    #productcolumn > section > ul > li{
+        padding-top: 1.5625%;/*5/320*/
+    }
     #bowlcolumn > header{
-        height: 35px;
-        font-size: 26px;
+        font-size: 26px;/*26/19*/;
         padding-top: 0;
     }
     #bowlcolumn ul{
-        font-size: 12px;
-        width: 305px;
+        padding-left: 1.5625%;/*5/320*/
+    }
+    li.inbowl > div{
+        margin-left: 1.5625%;/*5/320*/
+    }
+}
+@media screen and (max-width: 320px){
+    main{
+        width: 210px;
+        background: url("wow1.svg") no-repeat 0 260px;
+        background-size: 300px 259px;
+    }
+    main > header{
+        height: 140px;
+    }
+    main > header > span:first-child{
+        padding-top: 2.380952380952381%;/*5/210*/
+        font-size: 1.375em;/*22/16*/
+        height: 42.85714285714286%;/*60/140*/
+    }
+    main > header > span:last-child{
+        height: 0.4642857142857143%;/*65/140*/
+        font-size: 0.625em;/*10/16*/
+        margin: 0 auto;
+    }
+    #productcolumn > section > header{
+        padding-top: 0;
+    }
+    #productcolumn > section > header > p{
+        width: 100%;
+        font-size: 18px;
+        text-align: center;
+        padding-top: 8px;
+        margin-left: 0;
+    }
+    #productcolumn > section > header > span{
+        display: none;
+    }
+    #productcolumn > section > ul{
+        padding-left: 5px;
+    }
+    #productcolumn > section > ul > li{
+        padding-top: 5px;
+    }
+    #bowlcolumn > header{
+        width: 100%;
+        font-size: 18px;
+        text-align: center;
+        padding-top: 8px;
+        padding-left: 0;
+    }
+    #bowlcolumn ul{
         padding-left: 5px;
     }
     li.inbowl > div{
