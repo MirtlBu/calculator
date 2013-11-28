@@ -18,7 +18,7 @@ body{
     background: transparent;
 }
 #main{
-    width: 1000px;
+    width: 980px;
     height: 905px;
     margin: 0 auto;
     background: url("wow1.svg") no-repeat 340px 70px;
@@ -201,7 +201,7 @@ input{
         font-size: 0.875em;/*14/16*/
     }
 }
-@media screen and (max-width: 990px){
+@media screen and (max-device-width: 768px){
     #main{
         width: 450px;
         background: url("wow1.svg") no-repeat 0px 210px;
@@ -257,7 +257,7 @@ input{
         height: 1.953125%;/*15/768*/
     }
 }
-@media screen and (max-width: 480px){
+@media screen and (max-device-width: 480px){
     #main{
         width: 320px;
         background: url("wow1.svg") no-repeat 10px 250px;
@@ -303,7 +303,7 @@ input{
         margin-left: 1.5625%;/*5/320*/
     }
 }
-@media screen and (max-width: 320px){
+@media screen and (max-device-width: 320px){
     #main{
         width: 210px;
         background: url("wow1.svg") no-repeat 0 260px;
