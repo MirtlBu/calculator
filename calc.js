@@ -139,9 +139,6 @@ $(document).ready(function(){
             }
         }
     }
-    function size(){
-        alert($(window).width());
-    }
     //get data from json
     $.ajax({
          url: "newjson.json",
@@ -155,7 +152,6 @@ $(document).ready(function(){
              alert(textStatus + ": " + errorThrown);
          },
          complete: function(){
-            $("#main").find("span:last-child").click(size);
              $(DOMvariables.productcolumn).render({stores: jsonArr}, productsRender);
              $(DOMvariables.productcolumn).on("click", "header", showList);
              $(DOMvariables.productcolumn).on("click", ".productlist", addProduct);
