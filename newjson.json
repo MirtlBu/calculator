@@ -20,7 +20,8 @@
             {"_id": "mayo", "name":"Майонез", "cal": 6.8, "measure":"гр."},
             {"_id": "ketchup", "name":"Кетчуп", "cal": 1.1, "measure":"гр."},
             {"_id": "vegoil", "name":"Масло растительное", "cal": 8.8, "measure":"мл."},
-            {"_id": "walnut", "name":"Грецкий орех", "cal": 6.5, "measure":"гр."}
+            {"_id": "walnut", "name":"Грецкий орех", "cal": 6.5, "measure":"гр."},
+            {"_id": "almonds", "name":"Миндаль", "cal": 5.76, "measure":"гр."}
         ]
     },
     "dairy":{
@@ -63,8 +64,10 @@
             {"_id": "fishlean", "name":"Рыба нежирная", "cal": 0.82, "measure":"гр."},
             {"_id": "fishoil", "name":"Рыба в масле", "cal": 1.97, "measure":"гр."},
             {"_id": "shrimps", "name":"Креветки", "cal": 0.85, "measure":"шт."},
-            {"_id": "egglarge", "name":"Яйцо крупное", "cal": 77, "measure":"шт."},
-            {"_id": "eggsmall", "name":"Яйцо мелкое", "cal": 57, "measure":"шт."}
+            {"_id": "egglarge", "name":"Яйцо куриное крупное", "cal": 77, "measure":"шт."},
+            {"_id": "eggsmall", "name":"Яйцо куриное мелкое", "cal": 57, "measure":"шт."},
+            {"_id": "yolk", "name":"Желток куриный", "cal": 55, "measure":"шт."},
+            {"_id": "white", "name":"Белок куриный", "cal": 17, "measure":"шт."}
         ]
     },
     "veg":{
@@ -103,7 +106,9 @@
             {"_id": "strawberries", "name":"Клубника", "cal": 4, "measure":"гр."},
             {"_id": "raspberries", "name":"Малина", "cal": 1, "measure":"гр."},
             {"_id": "blueberries", "name":"Черника", "cal": 0.78, "measure":"гр."},
-            {"_id": "cherry", "name":"Вишня", "cal": 5, "measure":"гр."}
+            {"_id": "cherry", "name":"Вишня", "cal": 5, "measure":"гр."},
+            {"_id": "apricotdry", "name":"Курага", "cal": 2.41, "measure":"гр."},
+            {"_id": "prunedry", "name":"Чернослив", "cal": 2.4, "measure":"гр."}
         ]
     }
 }
